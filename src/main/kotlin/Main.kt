@@ -5,7 +5,6 @@ import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
     // You can use print statements as follows for debugging, they'll be visible when running tests.
-    println("Logs from your program will appear here!")
 
     if (args.isEmpty()) {
         println("Usage: your_program.sh <command> [<args>]")
@@ -25,7 +24,7 @@ fun main(args: Array<String>) {
             val gitDir = File(".git")
             val data = decompress("${File(gitDir, "objects").absolutePath}/${hash.substring(0, 2)}/${hash.substring(2, hash.length)}")
             val splitData = data.split('\u0000')
-            println(splitData[1])
+            print(splitData[1])
         }
    } else {
         println("Unknown command: ${args[0]}")
